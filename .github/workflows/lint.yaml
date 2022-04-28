@@ -13,3 +13,13 @@ jobs:
                 uses: docker://oskarstark/php-cs-fixer-ga
                 with:
                     args: --ansi --verbose --diff --dry-run
+
+    phpstan:
+        name: PHP Static Analysis
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout
+                uses: actions/checkout@v2
+            -   uses: php-actions/phpstan@v3
+                with:
+                    path: src/
