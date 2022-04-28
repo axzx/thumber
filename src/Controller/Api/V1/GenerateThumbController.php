@@ -39,7 +39,6 @@ class GenerateThumbController extends AbstractController
 
         $messageBus->dispatch(new GenerateThumbCommand($dto->filepath, $dto->filter));
 
-
         return $this->json([]);
     }
 }
